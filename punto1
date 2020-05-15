@@ -20,6 +20,18 @@ class Ave: public SerVivo{
         aereo=a; terrestre=t; acuatico=ac; peso_promedio=peso;
     }
 };
+class pinguino: public Ave{
+    public:
+    string habitat;
+    string movilidad_especial;
+
+    void Habito(){
+        cout<<"Los pinguinos habitamos en :"<<habitat<<"\n";
+    }
+    void MeDesplazo(){
+        cout<<"Los pinguinos podemos movernos con nuestra habilidad: "<<movilidad_especial<<"\n";
+    }
+};
 class Mamifero: public SerVivo{
     public:
     bool terrestre;
