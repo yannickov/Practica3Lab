@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+Ave, Mamifero, Reptil, Anfibio, Pez e Insecto
+
+class SerVivo{
+    virtual void Respiro();
+    virtual void MeAlimento();
+    virtual void Habito();
+    virtual void MeReproduzco();
+    virtual void MeDesplazo();
+};
+
+class Ave: public SerVivo{
+    
+};
+class Mamifero: public SerVivo{
+    
+};
+class Reptil: public SerVivo{
+    
+};
+class Anfibio: public SerVivo{
+    
+};
+class Pez: public SerVivo{
+
+};
+class Insecto: public SerVivo{
+    
+};
+int main()
+{
+    cout<<"Hello World";
+
+    return 0;
+}
