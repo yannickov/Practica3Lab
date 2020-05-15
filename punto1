@@ -1,7 +1,6 @@
 #include <iostream>
 
 using namespace std;
-Ave, Mamifero, Reptil, Anfibio, Pez e Insecto
 
 class SerVivo{
     virtual void Respiro();
@@ -12,22 +11,57 @@ class SerVivo{
 };
 
 class Ave: public SerVivo{
-    
+    public:
+    bool aereo;
+    bool terrestre;
+    bool acuatico;
+    int peso_promedio;
+    Ave(bool a,bool t,bool ac, int peso){
+        aereo=a; terrestre=t; acuatico=ac; peso_promedio=peso;
+    }
 };
 class Mamifero: public SerVivo{
-    
+    public:
+    bool terrestre;
+    bool carnivoro;
+    bool hervivoro;
+    bool omnivoro;
+    int mpeso_promedio;
+    Mamifero(bool t, bool c, bool h, bool o, int m){
+        terrestre=t; carnivoro=c; hervivoro=h; omnivoro=o; mpeso_promedio=m;
+    }
 };
 class Reptil: public SerVivo{
-    
+    bool depredador;
+    bool semiacuatico;
+    bool vive_en_desierto;
+    int longitud_cola;
+    Reptil(bool d, bool s, bool v, int l){
+        depredador=d;semiacuatico=s;vive_en_desierto=v;longitud_cola=l;
+    }
 };
 class Anfibio: public SerVivo{
-    
+    bool venenoso;
+    int apeso_promedio;
+    Anfibio(bool v, int a){
+        venenoso=v;apeso_promedio=a;
+    }
 };
 class Pez: public SerVivo{
+    bool carnivoro;
+    int largo;
+    Pez(bool c,int l){
+        carnivoro=c;largo=l;
+    }
 
 };
 class Insecto: public SerVivo{
-    
+    bool volador;
+    bool solitario;
+    int huevos_por_camada;
+    Insecto(bool v,bool s, int h){
+        volador=v;solitario=s;huevos_por_camada=h;
+    }
 };
 int main()
 {
