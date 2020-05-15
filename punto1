@@ -43,6 +43,14 @@ class Mamifero: public SerVivo{
         terrestre=t; carnivoro=c; hervivoro=h; omnivoro=o; mpeso_promedio=m;
     }
 };
+class murcielago: public Mamifero{
+    public:
+    string desplazamiento;
+    
+    void MeDesplazo(){
+        cout<<"los Murcielagos nos desplazamos: "<<desplazamiento<<"\n";
+    }
+};
 class Reptil: public SerVivo{
     bool depredador;
     bool semiacuatico;
@@ -52,11 +60,25 @@ class Reptil: public SerVivo{
         depredador=d;semiacuatico=s;vive_en_desierto=v;longitud_cola=l;
     }
 };
+class cocodrilo: public Reptil{
+    string estrategia_alimento;
+    
+    void MeAlimento(){
+        cout<<"Para alimentarnos los cocodrilos utilizamos la estrategia: "<<estrategia_alimento<<"\n";
+    }
+};
 class Anfibio: public SerVivo{
     bool venenoso;
     int apeso_promedio;
     Anfibio(bool v, int a){
         venenoso=v;apeso_promedio=a;
+    }
+};
+class ranavenenosa: public Anfibio{
+    string desplazar;
+    
+    void MeDesplazo(){
+        cout<<"Las ranas para desplazarnos usamos el moviemiento: "<<desplazar<<endl;
     }
 };
 class Pez: public SerVivo{
@@ -65,7 +87,14 @@ class Pez: public SerVivo{
     Pez(bool c,int l){
         carnivoro=c;largo=l;
     }
-
+};
+class pezEspada: public Pez{
+    string peculiaridad;
+    string alimento;
+    
+    void MeAlimento(){
+        cout<<"Los peces espada nos alimentamos de: "<<alimento<<endl;
+    }
 };
 class Insecto: public SerVivo{
     bool volador;
@@ -73,6 +102,13 @@ class Insecto: public SerVivo{
     int huevos_por_camada;
     Insecto(bool v,bool s, int h){
         volador=v;solitario=s;huevos_por_camada=h;
+    }
+};
+class mantis: public Insecto{
+    string respiracion;
+    
+    void Respiro(){
+        cout<<"Las mantis respiramos: "<<respiracion<<endl;
     }
 };
 int main()
