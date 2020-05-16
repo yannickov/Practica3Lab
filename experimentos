@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+class Serviv{
+    public:
+    virtual void como(){};
+    virtual void meDesplazo(){};
+};
+
+class Ave: public Serviv{
+    public:
+    bool aereo;
+    bool terrestre;
+    bool acuatico;
+    int pesoprom;
+    Ave(bool aer=false,bool terr=false, bool acu=false,int peso=45){
+        aereo=aer; terrestre=terr; acuatico=acu; pesoprom=peso;
+    }
+};
+class Pingu: public Ave{
+    public:
+    string despli;
+    Pingu(string i="s"){
+        despli=i;
+    }
+    void meDesplazo(){
+        cout<<"Me desplazo: "<<despli;
+    }
+    void como(){
+        cout<<"comemos: "<<pesoprom;
+    }
+};
+
+void ImprimirDatosSerVivo(Serviv& obj){
+    obj.meDesplazo();
+    obj.como();
+}
+    
+int main()
+{
+    cout<<"Hello World\n";
+    Pingu uno("nadanndo");
+    ImprimirDatosSerVivo(uno);
+    
+
+    return 0;
+}
