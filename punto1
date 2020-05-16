@@ -119,6 +119,7 @@ class Insecto: public SerVivo{
     }
 };
 class Mantis: public Insecto{
+    public:
     string respiracion;
     Mantis(string ress="aire"){
         respiracion=ress;
