@@ -128,6 +128,13 @@ class Mantis: public Insecto{
     }
 };
 
+void ImprimirDatosSerVivo(SerVivo& obj){
+    obj.Respiro();
+    obj.MeAlimento();
+    obj.Habito();
+    obj.MeReproduzco();
+    obj.MeDesplazo();
+}
 int main()
 {
     cout<<"Hello World";
