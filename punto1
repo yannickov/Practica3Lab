@@ -13,33 +13,39 @@ class SerVivo{
 
 class Ave: public SerVivo{
     public:
+    string pengbreath;
     string tipo;
     int peso_promedio;
-    Ave(string ti="aereo", int peso=0){
-        tipo=ti; peso_promedio=peso;
+    Ave(string ti="aereo", int peso=0,string pb="aire"){
+        tipo=ti; peso_promedio=peso;pengbreath=pb;
     }
 };
 class Pinguino: public Ave{
     public:
     string habitat;
     string movilidad_especial;
-    Pinguino(string habit="el polo sur",string mov="deslizamiento"){
-        habitat=habit;movilidad_especial=mov;
+    string pengfood;
+    Pinguino(string habit="el polo sur",string mov="deslizamiento",string f="pescado"){
+        habitat=habit;movilidad_especial=mov;pengfood=f;
     }
     void Habito(){
-        cout<<"Los pinguinos habitamos en :"<<habitat<<"\n";
-    }
+        cout<<"Los pinguinos habitamos en :"<<habitat<<endl;}
     void MeDesplazo(){
-        cout<<"Los pinguinos podemos movernos con nuestra habilidad: "<<movilidad_especial<<"\n";
-    }
+        cout<<"Los pinguinos podemos movernos con nuestra habilidad: "<<movilidad_especial<<endl;}
+    void MeAlimento(){
+        cout<<"Los pinguinos nos alimentamos de: "<<pengfood<<endl;}
+    void Respiro(){
+        cout<<"Los pinguinos respiramos: "<<pengbreath<<endl;}
+
 };
 class Mamifero: public SerVivo{
     public:
     string Mtipo;
     string alimentacion;
     int mpeso_promedio;
-    Mamifero(string _Mtipo="terrestre",string _almentacion="omnivoro",int peso=0){
-        Mtipo=_Mtipo;alimentacion=_almentacion;mpeso_promedio=peso;
+    string mambreath;
+    Mamifero(string _Mtipo="terrestre",string _almentacion="omnivoro",int peso=0,string m="aire"){
+        Mtipo=_Mtipo;alimentacion=_almentacion;mpeso_promedio=peso;mambreath=m;
     }
 };
 class Murcielago: public Mamifero{
@@ -49,34 +55,44 @@ class Murcielago: public Mamifero{
         localizacion=locali;
     }
     void MeDesplazo(){
-        cout<<"los Murcielagos nos desplazamos usando: "<<localizacion<<endl;
+        cout<<"los Murcielagos nos desplazamos usando: "<<localizacion<<endl;}
+    void Respiro(){
+        cout<<"como mamiferos, los murcielagos respiramos: "<<mambreath<<endl;}
+    void MeAlimento(){
+        cout<<"como mamiferos, los murcielagos tenemos generalmente alimentacion tipo: "<<alimentacion<<endl;
     }
 };
 class Reptil: public SerVivo{
     public:
     string rtipo;
     int longitud_cola;
-    Reptil(string tipo="terrestre", int l=0){
-        rtipo=tipo;longitud_cola=l;
+    string reproduccion;
+    Reptil(string tipo="terrestre", int l=0,string re="oviparo"){
+        rtipo=tipo;longitud_cola=l;reproduccion=re;
     }
 };
 class Cocodrilo: public Reptil{
     public:
     string estrategia_alimento;
-    Cocodrilo(string est="emboscada en el agua"){
-        estrategia_alimento=est;
+    string habita;
+    Cocodrilo(string ha="los lagos, rios y mares",string est="emboscada en el agua"){
+        estrategia_alimento=est;habita=ha;
     }
-    
     void MeAlimento(){
-        cout<<"Para alimentarnos los cocodrilos utilizamos la estrategia: "<<estrategia_alimento<<"\n";
-    }
+        cout<<"Para alimentarnos los cocodrilos utilizamos la estrategia: "<<estrategia_alimento<<"\n";}
+    void MeReproduzco(){
+        cout<<"Como reptiles, los cocodrilos tenemos reproduccion tipo: "<<reproduccion<<endl;}
+    void Habito(){
+        cout<<"Los cocodrilos habitamos en: "<<habita<<endl;}
 };
 class Anfibio: public SerVivo{
     public:
     string defensa;
     int apeso_promedio;
-    Anfibio(string D="ser venenoso", int a=0){
-        defensa=D;apeso_promedio=a;
+    string anHabit;
+    string anbreath;
+    Anfibio(string D="ser venenoso", int a=0,string hab="cerca al agua",string ab="a traves de la piel"){
+        defensa=D;apeso_promedio=a;anHabit=hab;anbreath=ab;
     }
 };
 class Ranavenenosa: public Anfibio{
@@ -87,35 +103,45 @@ class Ranavenenosa: public Anfibio{
     }
     
     void MeDesplazo(){
-        cout<<"Las ranas para desplazarnos usamos el moviemiento: "<<desplazar<<endl;
-    }
+        cout<<"Las ranas para desplazarnos usamos el moviemiento: "<<desplazar<<endl;}
+    void Habito(){
+        cout<<"Como anfibios, las ranas habitamos en: "<<anHabit<<endl;}
+    void Respiro(){
+        cout<<"como anfibios, las ranas respiramos: "<<anbreath<<endl;}
 };
 class Pez: public SerVivo{
     public:
     string p_alimentacion;
     int largo;
-    Pez(string p_a="omnivoro",int l=0){
-        p_alimentacion=p_a;largo=l;
+    string pezbreath;
+    Pez(string p_a="omnivoro",int l=0,string pb="con branquias"){
+        p_alimentacion=p_a;largo=l;pezbreath=pb;
     }
 };
 class PezEspada: public Pez{
     public:
     string peculiaridad;
     string alimento;
-    PezEspada(string alim="carnivoro",string pec="tiene una nariz como espada"){
-        alimento=alim; peculiaridad=pec;
+    string locatpez;
+    PezEspada(string alim="carnivoro",string pec="tiene una nariz como espada",string lo="el mar"){
+        alimento=alim; peculiaridad=pec;locatpez=lo;
     }
     
     void MeAlimento(){
-        cout<<"Los peces espada tenemos alimentación tipo: "<<alimento<<endl;
-    }
+        cout<<"Los peces espada tenemos alimentación tipo: "<<alimento<<endl;}
+    void Respiro(){
+        cout<<"Como los peces en general, los peces espada ";
+        cout<<"respiramos: "<<pezbreath<<endl;}
+    void Habito(){
+        cout<<"Los peces espada habitamos en: "<<locatpez;}
 };
 class Insecto: public SerVivo{
     public:
     string in_alimentacion;
     int huevos_por_camada;
-    Insecto(string in_al="omnivoro", int h=0){
-        in_alimentacion=in_al;huevos_por_camada=h;
+    string inshabit;
+    Insecto(string in_al="omnivoro", int h=0,string inh="En casi todos los habitats por encima de 14 grados"){
+        in_alimentacion=in_al;huevos_por_camada=h;inshabit=inh;
     }
 };
 class Mantis: public Insecto{
@@ -128,8 +154,11 @@ class Mantis: public Insecto{
         cout<<"Las mantis respiramos: "<<respiracion<<endl;
     }
     void MeAlimento(){
-        in_alimentacion="carnivoras";
-        cout<<"Como somos insectos, las mantis somos: "<<in_alimentacion<<endl;
+        in_alimentacion="carnivoro";
+        cout<<"Las mantis tenemos alimentacion tipo: "<<in_alimentacion<<endl;
+    }
+    void Habito(){
+        cout<<"Como insectos, las mantis vivimos en: "<<inshabit<<endl;
     }
 };
 
