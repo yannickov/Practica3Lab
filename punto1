@@ -102,12 +102,12 @@ class PezEspada: public Pez{
     public:
     string peculiaridad;
     string alimento;
-    PezEspada(string alim="carcnivoro",string pec="tiene una nariz como espada"){
+    PezEspada(string alim="carnivoro",string pec="tiene una nariz como espada"){
         alimento=alim; peculiaridad=pec;
     }
     
     void MeAlimento(){
-        cout<<"Los peces espada nos alimentamos de: "<<alimento<<endl;
+        cout<<"Los peces espada tenemos alimentación tipo: "<<alimento<<endl;
     }
 };
 class Insecto: public SerVivo{
@@ -127,6 +127,10 @@ class Mantis: public Insecto{
     void Respiro(){
         cout<<"Las mantis respiramos: "<<respiracion<<endl;
     }
+    void MeAlimento(){
+        in_alimentacion="carnivoras";
+        cout<<"Como somos insectos, las mantis somos: "<<in_alimentacion<<endl;
+    }
 };
 
 void ImprimirDatosSerVivo(SerVivo& obj){
@@ -136,9 +140,35 @@ void ImprimirDatosSerVivo(SerVivo& obj){
     obj.MeReproduzco();
     obj.MeDesplazo();
 }
+
 int main()
 {
-    cout<<"Hello World";
-
+    int opcion;
+    cout<<"Bienvenido a MundoAnimal"<<endl<<endl;
+    cout<<"Seleccione una de las opciones para ver informacion del animal que desee: "<<endl;
+    cout<<"1. Pinguino\n2. Murcielago\n3. Cocodrilo\n4. Rana venenosa\n5. Pez espada\n6. Mantis\n:";
+    cin>>opcion;
+    Pinguino temp1;Murcielago temp2;Cocodrilo temp3;Ranavenenosa temp4;PezEspada temp5;Mantis temp6;
+    switch(opcion){
+        case 1:
+        ImprimirDatosSerVivo(temp1);
+        break;
+        case 2:
+        ImprimirDatosSerVivo(temp2);
+        break;
+        case 3:
+        ImprimirDatosSerVivo(temp3);
+        break;
+        case 4:
+        ImprimirDatosSerVivo(temp4);
+        break;
+        case 5:
+        ImprimirDatosSerVivo(temp5);
+        break;
+        case 6:
+        ImprimirDatosSerVivo(temp6);
+        break;
+    }
+        
     return 0;
 }
